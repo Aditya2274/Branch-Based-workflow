@@ -3,8 +3,8 @@ name: Branch Based CI
 on:
     push:
         branches:
-            -main
-            -develop
+            - main
+            - develop
 
 jobs:
     branch-check:
