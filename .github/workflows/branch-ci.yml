@@ -1,0 +1,23 @@
+name: Branch Based CI
+
+on:
+    push:
+        branches:
+            -main
+            -develop
+
+jobs:
+    branch-check:
+        runs-on: ubuntu-latest
+
+        steps:
+           - name: Check out repository code
+             uses: actions/checkout@v5
+
+           - name: Display current branch
+             # This ${{ github.ref_name }} is a context variable that 
+             # automatically pulls the name of the branch being used.
+             run: echo "Workflow running on branch ${{github.ref_name}}"
+
+           - name: Run Basic Validation
+             run: echo "Basic Validation completed"
